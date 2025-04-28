@@ -16,11 +16,11 @@ namespace diary_pilot.Models
         [DataType(DataType.Password)]
         public string Senha { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar a senha")]
-        public Perfil Perfil { get; set; }
+        [Required(ErrorMessage = "Obrigatório informar o perfil")]
+        public perfil Perfil { get; set; }
     }
 
-    public enum Perfil
+    public enum perfil
     {
         Profissional,
         Estudante
