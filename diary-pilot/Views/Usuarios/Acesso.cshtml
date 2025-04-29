@@ -1,0 +1,29 @@
+﻿@model diary_pilot.Models.Usuario
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Diary Pilot</title>
+    <link rel="stylesheet" href="css\styleSheet.css">
+</head>
+<body>
+    <div class="login">
+        <h1>DIARY PILOT</h1>
+        <img src="img\logoDP.jpg" alt="Logo">
+        <form asp-action="Login" method="POST">
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p>
+            <a href="#">Esqueci a senha</a> |
+            <a asp-controller="Usuarios" asp-action="Create">Novo por aqui? Cadastre-se!</a>
+        </p>
+    </div>
+</body>
+</html>

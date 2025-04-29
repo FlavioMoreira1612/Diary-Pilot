@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\NovaPasta\**" />
+    <Content Remove="wwwroot\NovaPasta\**" />
+    <EmbeddedResource Remove="wwwroot\NovaPasta\**" />
+    <None Remove="wwwroot\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Usuarios\Index1.cshtml" />
+    <Content Remove="wwwroot\css\Style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.15" />
@@ -16,6 +28,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\NovaPasta1\" />
   </ItemGroup>
 
 </Project>

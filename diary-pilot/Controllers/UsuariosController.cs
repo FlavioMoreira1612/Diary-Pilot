@@ -24,6 +24,12 @@ namespace diary_pilot.Controllers
             return View(await _context.Usuarios.ToListAsync());
         }
 
+        // GET: Usuarios/Acesso
+        public IActionResult Acesso()
+        {
+            return View();
+        }
+
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
