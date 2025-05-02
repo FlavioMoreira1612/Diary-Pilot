@@ -98,11 +98,6 @@ namespace diary_pilot.Controllers
         }
 
 
-        // GET: Usuarios/Acesso
-        public IActionResult Acesso()
-        {
-            return View();
-        }
 
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -137,6 +132,7 @@ namespace diary_pilot.Controllers
         {
             if (ModelState.IsValid)
             {
+                usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -176,6 +172,7 @@ namespace diary_pilot.Controllers
             {
                 try
                 {
+                    usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }

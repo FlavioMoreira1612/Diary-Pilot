@@ -17,13 +17,13 @@ namespace diary_pilot.Models
         public string Senha { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o perfil")]
-        public perfil Perfil { get; set; }
+        public Perfil Perfil { get; set; }
 
         public ICollection<Tarefa> Tarefas { get; set; } 
 
     }
 
-    public enum perfil
+    public enum Perfil
     {
         Profissional,
         Estudante
