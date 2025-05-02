@@ -18,6 +18,9 @@ namespace diary_pilot.Models
 
         [Required(ErrorMessage = "Obrigatório informar o perfil")]
         public perfil Perfil { get; set; }
+
+        public ICollection<Tarefa> Tarefas { get; set; } 
+
     }
 
     public enum perfil

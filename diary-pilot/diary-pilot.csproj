@@ -15,11 +15,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20250502005107_M02-AddTableTarefas.cs" />
+    <Compile Remove="Migrations\20250502005107_M02-AddTableTarefas.Designer.cs" />
+    <Compile Remove="Migrations\20250502014819_M03-AddtableTarefas.cs" />
+    <Compile Remove="Migrations\20250502014819_M03-AddtableTarefas.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Usuarios\Index1.cshtml" />
     <Content Remove="wwwroot\css\Style.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.15" />
