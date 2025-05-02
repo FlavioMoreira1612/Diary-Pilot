@@ -81,3 +81,34 @@ p {
         p a:hover {
             text-decoration: underline;
         }
+
+.text-center {
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    font-family: "Poppins", Helvetica, sans-serif;
+    color:cornflowerblue;
+}
+
+.header {
+    background-color: ghostwhite;
+    color: cornflowerblue;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.main {
+    background-color: cornflowerblue;
+}
+.container {
+ color: cornflowerblue;
+}

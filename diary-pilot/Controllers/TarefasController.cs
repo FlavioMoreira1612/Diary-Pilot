@@ -21,7 +21,8 @@ namespace diary_pilot.Controllers
         // GET: Tarefas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Tarefas.ToListAsync());
+            var appDbContext = _context.Tarefas.Include(t => t.Usuario);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Tarefas/Details/5
@@ -32,19 +33,21 @@ namespace diary_pilot.Controllers
                 return NotFound();
             }
 
-            var tarefas = await _context.Tarefas
+            var tarefa = await _context.Tarefas
+                .Include(t => t.Usuario)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (tarefas == null)
+            if (tarefa == null)
             {
                 return NotFound();
             }
 
-            return View(tarefas);
+            return View(tarefa);
         }
 
         // GET: Tarefas/Create
         public IActionResult Create()
         {
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome");
             return View();
         }
 
@@ -53,15 +56,16 @@ namespace diary_pilot.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Tarefa,Data,Descricao,Tipo")] Tarefas tarefas)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Data,Descricao,Tipo,UsuarioId")] Tarefa tarefa)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(tarefas);
+                _context.Add(tarefa);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(tarefas);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", tarefa.UsuarioId);
+            return View(tarefa);
         }
 
         // GET: Tarefas/Edit/5
@@ -72,12 +76,13 @@ namespace diary_pilot.Controllers
                 return NotFound();
             }
 
-            var tarefas = await _context.Tarefas.FindAsync(id);
-            if (tarefas == null)
+            var tarefa = await _context.Tarefas.FindAsync(id);
+            if (tarefa == null)
             {
                 return NotFound();
             }
-            return View(tarefas);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", tarefa.UsuarioId);
+            return View(tarefa);
         }
 
         // POST: Tarefas/Edit/5
@@ -85,9 +90,9 @@ namespace diary_pilot.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Tarefa,Data,Descricao,Tipo")] Tarefas tarefas)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Data,Descricao,Tipo,UsuarioId")] Tarefa tarefa)
         {
-            if (id != tarefas.Id)
+            if (id != tarefa.Id)
             {
                 return NotFound();
             }
@@ -96,12 +101,12 @@ namespace diary_pilot.Controllers
             {
                 try
                 {
-                    _context.Update(tarefas);
+                    _context.Update(tarefa);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TarefasExists(tarefas.Id))
+                    if (!TarefaExists(tarefa.Id))
                     {
                         return NotFound();
                     }
@@ -112,7 +117,8 @@ namespace diary_pilot.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(tarefas);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Nome", tarefa.UsuarioId);
+            return View(tarefa);
         }
 
         // GET: Tarefas/Delete/5
@@ -123,14 +129,15 @@ namespace diary_pilot.Controllers
                 return NotFound();
             }
 
-            var tarefas = await _context.Tarefas
+            var tarefa = await _context.Tarefas
+                .Include(t => t.Usuario)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (tarefas == null)
+            if (tarefa == null)
             {
                 return NotFound();
             }
 
-            return View(tarefas);
+            return View(tarefa);
         }
 
         // POST: Tarefas/Delete/5
@@ -138,17 +145,17 @@ namespace diary_pilot.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var tarefas = await _context.Tarefas.FindAsync(id);
-            if (tarefas != null)
+            var tarefa = await _context.Tarefas.FindAsync(id);
+            if (tarefa != null)
             {
-                _context.Tarefas.Remove(tarefas);
+                _context.Tarefas.Remove(tarefa);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TarefasExists(int id)
+        private bool TarefaExists(int id)
         {
             return _context.Tarefas.Any(e => e.Id == id);
         }
