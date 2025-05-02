@@ -308,7 +308,7 @@ body {
 }
 
 .summary th, .summary td {
-    padding: 10px;
+    padding: 10px; 
     border-bottom: 1px solid #eee;
     text-align: left;
 }
