@@ -8,7 +8,7 @@
 }
 
 .sidebar {
-    width: 25 0px;
+    width: 250px;
     background-color: white;
     padding: 20px;
     display: flex;
@@ -278,9 +278,7 @@ body {
     border-radius: 50%;
 }
 
-    .circle.checked {
-        background-color: #6366f1;
-    }
+
 
 .badge {
     margin-left: auto;
