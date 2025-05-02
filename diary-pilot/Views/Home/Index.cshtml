@@ -1,4 +1,5 @@
 ﻿@{
+    Layout = null; // Remove o layout padrão do ASP.NET Core MVC
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,85 +8,81 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/HomePage.css" asp-append-version="true" />
-    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
-<div class="app-container">
-    <div class="wrapper">
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="/img/logoDP.jpg" />
-                <h1 class="logo-text">DIARY PILOT</h1>
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a class="Vgeral" href="#">Visão Geral</a></li>
-                    <li><a class="MTarefa" href="#">Minhas Tarefas</a></li>
-                    <li><a class="Categoria" href="#">Categoria</a></li>
-                    <li><a class="Config" href="#">Configurações</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="content">
-            
-        </main>
-    </div>
-    <div class="main-container">
-        <div class="content">
-            <header class="header">
-                <div>
-                    <h1>Gustavo</h1>
-                    <p>Vamos terminar sua tarefa hoje!</p>
+<body>
+    <div class="app-container">
+        <div class="wrapper">
+            <aside class="sidebar">
+                <div class="logo">
+                    <img src="/img/logoDP.jpg" />
+                    <h1 class="logo-text">DIARY PILOT</h1>
                 </div>
-                <div class="profile">
-                    <button class="mic-button"></button>
-                    <img src="img/perfil.png" alt="Foto de Perfil" class="profile-pic">
-                </div>
-            </header>
+                <nav class="menu">
+                    <ul>
+                        <li><a class="Vgeral" asp-controller="Home" asp-action="Index">Visão Geral</a></li>
+                        <li><a class="MTarefa" asp-controller="Tarefas" asp-action="Index">Minhas Tarefas</a></li>
+                        <li><a class="Categoria" asp-controller="Categorias" asp-action="Index">Categoria</a></li>
+                        <li><a class="Config" asp-controller="Usuarios" asp-action="Config">Configurações</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-            <nav class="task-status">
-                <a href="#">Aprovada</a>
-                <a href="#">Pendente</a>
-                <a href="#">Concluída</a>
-            </nav>
+            <main class="content">
+                <header class="header">
+                    <div>
+                        <h1>Gustavo</h1>
+                        <p>Vamos terminar sua tarefa hoje!</p>
+                    </div>
+                    <div class="profile">
+                        <button class="mic-button"></button>
+                        <img src="img/perfil.png" alt="Foto de Perfil" class="profile-pic">
+                    </div>
+                </header>
 
-            <section class="tasks-today">
-                <h2>Tarefas Pendentes de Hoje</h2>
-                <ul>
-                    <li><input class="circle" type="radio">Conferir entrega do cimento <span class="badge pending">Pendente</span></li>
-                    <li><input class="circle" type="radio"> Reunião com engenheiro civil e arquiteto <span class="badge done">Concluído</span></li>
-                    <li><input class="circle" type="radio"> Solicitar ligação provisória de água <span class="badge late">Atrasado</span></li>
-                    <li><input class="circle" type="radio"> Interactive prototype project <span class="badge done">Concluído</span></li>
-                </ul>
-            </section>
+                <nav class="task-status">
+                    <a href="#">Aprovada</a>
+                    <a href="#">Pendente</a>
+                    <a href="#">Concluída</a>
+                </nav>
 
-            <section class="summary">
-                <h2>Resumo da Obra - Bairro Santa Inês</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tarefa</th>
-                            <th>Responsável</th>
-                            <th>Data limite</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Limpeza do terreno</td>
-                            <td>Equipe A</td>
-                            <td>02/12/2024</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+                <section class="tasks-today">
+                    <h2>Tarefas Pendentes de Hoje</h2>
+                    <ul>
+                        <li><input class="circle" type="radio"> Conferir entrega do cimento <span class="badge pending">Pendente</span></li>
+                        <li><input class="circle" type="radio"> Reunião com engenheiro civil e arquiteto <span class="badge done">Concluído</span></li>
+                        <li><input class="circle" type="radio"> Solicitar ligação provisória de água <span class="badge late">Atrasado</span></li>
+                        <li><input class="circle" type="radio"> Interactive prototype project <span class="badge done">Concluído</span></li>
+                    </ul>
+                </section>
+
+                <section class="summary">
+                    <h2>Resumo da Obra - Bairro Santa Inês</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tarefa</th>
+                                <th>Responsável</th>
+                                <th>Data limite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Limpeza do terreno</td>
+                                <td>Equipe A</td>
+                                <td>02/12/2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
         </div>
 
         <aside class="right-sidebar">
@@ -104,18 +101,26 @@
                 <p class="number">0</p>
                 <p>Aguardando execução</p>
             </div>
-
-
         </aside>
     </div>
-</div>
 
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="auth">
+            <p>Olá, @User.Identity.Name</p>
+            <a asp-controller="Usuarios" asp-action="Logout">Sair</a>
+        </div>
+    }
+    else
+    {
+        <div class="auth">
+            <a asp-controller="Usuarios" asp-action="Login">Login</a>
+        </div>
+    }
 
-
-<body>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
 </body>
 </html>
+
