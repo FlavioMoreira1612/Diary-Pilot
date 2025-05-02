@@ -1,0 +1,338 @@
+﻿html {
+    font-size: 14px;
+}
+
+.warpper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    aling-items: center;
+    height: 100vh;
+}
+
+.logo img {
+    max-width: 100%;
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 75px;
+    margin-top: -79px;
+    color: #5577FF;
+}
+
+.menu ul {
+    margin-top: 40px;
+}
+
+    .menu ul li {
+        margin: 15px 0;
+        text-align: left;
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+        font-size: 10px;
+        margin-left: -20px;
+    }
+
+
+
+        .menu ul li a {
+            text-decoration: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 6px;
+            padding: 10px 40px;
+        }
+
+.Vgeral {
+    background-image: url('/img/IconeVG.png');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 5px 6px;
+    background-color: #F5F5F7;
+    color: black;
+}
+
+.MTarefa {
+    background-image: url('/img/IconeMT.png');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 5px 5px;
+    color: #8E92BC;
+}
+
+.Categoria {
+    background-image: url('/img/IconeC.png');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 5px 0px;
+    color: #8E92BC;
+}
+
+.Config {
+    background-image: url('/img/IconeCon.png');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 7px 4px;
+    color: #8E92BC;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.sino {
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0077cc;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.mic-button {
+    border-radius: 100px;
+    border: none;
+    padding: 20px 20px;
+    background-image: url('/img/Sininho.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: 7px 7px;
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fefefe;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar esquerda */
+.left-sidebar {
+    width: 250px;
+    background-color: #f9fafb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #6366f1;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+    .menu a {
+        text-decoration: none;
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+/* Área principal */
+.main-container {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    background-color: #FFFAFA;
+}
+
+/* Conteúdo */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Status tarefas */
+.task-status {
+    display: flex;
+    gap: 20px;
+}
+
+    .task-status a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #555;
+    }
+
+/* Tarefas pendentes */
+.tasks-today ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tasks-today li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
+
+
+
+.badge {
+    margin-left: auto;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+    .badge.pending {
+        background-color: #fef9c3;
+    }
+
+    .badge.done {
+        background-color: #d1fae5;
+    }
+
+    .badge.late {
+        background-color: #fecaca;
+    }
+
+/* Resumo */
+.summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.summary th, .summary td {
+    padding: 10px; 
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh; /* faz ocupar toda altura da tela */
+}
+/* Sidebar direita */
+.right-sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calendar, .card {
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+    .card .number {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
