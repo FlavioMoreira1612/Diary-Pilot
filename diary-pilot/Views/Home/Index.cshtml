@@ -2,7 +2,120 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/HomePage.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/mf_dev_backend_2025.styles.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<div class="app-container">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/img/logoDP.jpg" />
+                <h1 class="logo-text">DIARY PILOT</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a class="Vgeral" href="#">Visão Geral</a></li>
+                    <li><a class="MTarefa" href="#">Minhas Tarefas</a></li>
+                    <li><a class="Categoria" href="#">Categoria</a></li>
+                    <li><a class="Config" href="#">Configurações</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            
+        </main>
+    </div>
+    <div class="main-container">
+        <div class="content">
+            <header class="header">
+                <div>
+                    <h1>Gustavo</h1>
+                    <p>Vamos terminar sua tarefa hoje!</p>
+                </div>
+                <div class="profile">
+                    <button class="mic-button"></button>
+                    <img src="img/perfil.png" alt="Foto de Perfil" class="profile-pic">
+                </div>
+            </header>
+
+            <nav class="task-status">
+                <a href="#">Aprovada</a>
+                <a href="#">Pendente</a>
+                <a href="#">Concluída</a>
+            </nav>
+
+            <section class="tasks-today">
+                <h2>Tarefas Pendentes de Hoje</h2>
+                <ul>
+                    <li><input class="PF" type="radio">Conferir entrega do cimento <span class="badge pending">Pendente</span></li>
+                    <li><input class="PF" type="radio"> Reunião com engenheiro civil e arquiteto <span class="badge done">Concluído</span></li>
+                    <li><input class="PF" type="radio"> Solicitar ligação provisória de água <span class="badge late">Atrasado</span></li>
+                    <li><input class="PF" type="radio"> Interactive prototype project <span class="badge done">Concluído</span></li>
+                </ul>
+            </section>
+
+            <section class="summary">
+                <h2>Resumo da Obra - Bairro Santa Inês</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tarefa</th>
+                            <th>Responsável</th>
+                            <th>Data limite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Limpeza do terreno</td>
+                            <td>Equipe A</td>
+                            <td>02/12/2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <aside class="right-sidebar">
+            <div class="calendar">
+                <h4>Março 2025</h4>
+            </div>
+
+            <div class="card">
+                <h2>Tarefas Concluídas</h2>
+                <p class="number">1</p>
+                <p>Tarefas finalizadas com sucesso esta semana!</p>
+            </div>
+
+            <div class="card">
+                <h2>Pendentes</h2>
+                <p class="number">0</p>
+                <p>Aguardando execução</p>
+            </div>
+
+
+        </aside>
+    </div>
 </div>
+
+
+
+<body>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+</body>
+</html>
