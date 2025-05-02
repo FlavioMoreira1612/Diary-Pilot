@@ -31,7 +31,6 @@ namespace diary_pilot.Models
         Trabalho,
         Pessoal,
         Financeiro,
-        Universidade,
         Projeto,
         Outros
     }
